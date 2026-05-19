@@ -88,34 +88,64 @@
             </div>
             <div class="pontos-grid">
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-lighthouse"></i></div>
-                    <h3>Farol do Cabo Branco</h3>
-                    <p>Símbolo de João Pessoa, localizado no ponto mais oriental das Américas. Vista panorâmica do Atlântico.</p>
+                    <div class="ponto-img">
+                       <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600" alt="Farol do Cabo Branco">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-landmark"></i></div>
+                        <h3>Farol do Cabo Branco</h3>
+                        <p>Símbolo de JP, ponto mais oriental das Américas. Vista panorâmica do Atlântico.</p>
+                    </div>
                 </div>
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-umbrella-beach"></i></div>
-                    <h3>Praia de Tambaú</h3>
-                    <p>Uma das praias mais famosas da cidade, com calçadão, quiosques e grande movimentação turística.</p>
+                    <div class="ponto-img">
+                        <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600" alt="Praia de Tambaú">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-umbrella-beach"></i></div>
+                        <h3>Praia de Tambaú</h3>
+                        <p>Uma das praias mais famosas da cidade, com calçadão e quiosques.</p>
+                    </div>
                 </div>
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-water"></i></div>
-                    <h3>Ponta do Seixas</h3>
-                    <p>Ponto geograficamente mais oriental das Américas, com mirante e monumento histórico.</p>
+                    <div class="ponto-img">
+                        <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600" alt="Ponta do Seixas">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-water"></i></div>
+                        <h3>Ponta do Seixas</h3>
+                        <p>Ponto geograficamente mais oriental das Américas, com mirante e monumento.</p>
+                    </div>
                 </div>
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-tree"></i></div>
-                    <h3>Parque Solon de Lucena</h3>
-                    <p>Cartão-postal da cidade, rodeado por palmeiras imperiais no coração da capital.</p>
+                    <div class="ponto-img">
+                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Parque Solon de Lucena">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-tree"></i></div>
+                        <h3>Parque Solon de Lucena</h3>
+                        <p>Cartão-postal da cidade, rodeado por palmeiras imperiais no coração da capital.</p>
+                    </div>
                 </div>
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-church"></i></div>
-                    <h3>Centro Histórico</h3>
-                    <p>Conjunto arquitetônico colonial com igrejas barrocas e casarões do período colonial.</p>
+                    <div class="ponto-img">
+                        <img src="https://images.unsplash.com/photo-1543832923-44667a44c804?w=600" alt="Centro Histórico">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-church"></i></div>
+                        <h3>Centro Histórico</h3>
+                        <p>Conjunto arquitetônico colonial com igrejas barrocas e casarões históricos.</p>
+                    </div>
                 </div>
                 <div class="ponto-card">
-                    <div class="ponto-icon"><i class="fas fa-seedling"></i></div>
-                    <h3>Jardim Botânico</h3>
-                    <p>Um dos maiores do Brasil, com mais de 500 espécies de plantas nativas da Mata Atlântica.</p>
+                    <div class="ponto-img">
+                       <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600" alt="Jardim Botânico">
+                    </div>
+                    <div class="ponto-info">
+                        <div class="ponto-icon"><i class="fas fa-seedling"></i></div>
+                        <h3>Jardim Botânico</h3>
+                        <p>Um dos maiores do Brasil, com mais de 500 espécies de plantas nativas.</p>
+                    </div>
                 </div>
             </div>
 
@@ -294,7 +324,6 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="{% static 'js/script.js' %}"></script>
 
-    <!-- Scroll suave do navbar -->
     <script>
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
