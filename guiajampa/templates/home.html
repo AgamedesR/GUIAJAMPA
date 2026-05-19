@@ -1,27 +1,306 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia Jampa</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
 
-    <header>
-        <h1>Guia Jampa</h1>
-        <p>Descubra o melhor de João Pessoa</p>
-    </header>
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">🗺️ Guia Jampa</a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#pontos">Pontos Turísticos</a></li>
+                <li><a href="#locais">Locais</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#dicas">Dicas</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <main>
-        <p>Bem-vindo ao guia turístico de João Pessoa, a cidade do sol.</p>
-    </main>
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <span class="hero-badge">A Porta do Sol do Brasil</span>
+                <h1>Guia Jampa</h1>
+                <p>Descubra as belezas, a história e a cultura de João Pessoa — o ponto mais oriental das Américas.</p>
+                <div class="hero-buttons">
+                    <a href="#pontos" class="btn-primary">Explorar Pontos Turísticos</a>
+                    <a href="#sobre" class="btn-secondary">Conhecer a Cidade</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Guia Jampa</p>
+    <!-- SOBRE JAMPA -->
+    <section id="sobre">
+        <div class="container">
+            <div class="section-header">
+                <h2>Sobre Jampa</h2>
+                <p>Uma cidade que encanta quem visita e orgulha quem mora</p>
+            </div>
+            <div class="sobre-grid">
+                <div class="sobre-text">
+                    <p>João Pessoa, carinhosamente chamada de <strong>"Jampa"</strong> pelos seus moradores, é a capital do estado da Paraíba e uma das cidades mais verdes do Brasil. Com praias paradisíacas, rica história colonial e gastronomia diversificada, a cidade oferece experiências únicas para turistas e moradores.</p>
+                    <p>Fundada em 1585, João Pessoa é a terceira cidade mais antiga do Brasil e guarda um patrimônio histórico e cultural imenso, com igrejas barrocas, casarões coloniais e uma orla deslumbrante à beira do Oceano Atlântico.</p>
+                </div>
+                <div class="sobre-stats">
+                    <div class="stat-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Ponto mais Oriental</h3>
+                        <p>das Américas</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>Fundada em 1585</h3>
+                        <p>3ª cidade mais antiga do Brasil</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-sun"></i>
+                        <h3>Clima Tropical</h3>
+                        <p>Sol o ano todo</p>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Cidade Verde</h3>
+                        <p>Uma das mais arborizadas do mundo</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PONTOS TURÍSTICOS -->
+    <section id="pontos">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Pontos Turísticos</h2>
+                <p>Os principais atrativos de João Pessoa para você explorar</p>
+            </div>
+            <div class="pontos-grid">
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-lighthouse"></i></div>
+                    <h3>Farol do Cabo Branco</h3>
+                    <p>Símbolo de João Pessoa, localizado no ponto mais oriental das Américas. Vista panorâmica do Atlântico.</p>
+                </div>
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-umbrella-beach"></i></div>
+                    <h3>Praia de Tambaú</h3>
+                    <p>Uma das praias mais famosas da cidade, com calçadão, quiosques e grande movimentação turística.</p>
+                </div>
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-water"></i></div>
+                    <h3>Ponta do Seixas</h3>
+                    <p>Ponto geograficamente mais oriental das Américas, com mirante e monumento histórico.</p>
+                </div>
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-tree"></i></div>
+                    <h3>Parque Solon de Lucena</h3>
+                    <p>Cartão-postal da cidade, rodeado por palmeiras imperiais no coração da capital.</p>
+                </div>
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-church"></i></div>
+                    <h3>Centro Histórico</h3>
+                    <p>Conjunto arquitetônico colonial com igrejas barrocas e casarões do período colonial.</p>
+                </div>
+                <div class="ponto-card">
+                    <div class="ponto-icon"><i class="fas fa-seedling"></i></div>
+                    <h3>Jardim Botânico</h3>
+                    <p>Um dos maiores do Brasil, com mais de 500 espécies de plantas nativas da Mata Atlântica.</p>
+                </div>
+            </div>
+
+            <!-- MAPA -->
+            <div class="mapa-container">
+                <h3>Explore no Mapa</h3>
+                <p>Passe o mouse sobre os marcadores para ver detalhes. Clique para abrir no Google Maps.</p>
+                <div id="mapa"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCAIS MOVIMENTADOS -->
+    <section id="locais">
+        <div class="container">
+            <div class="section-header">
+                <h2>Locais Movimentados</h2>
+                <p>Shoppings, praças e pontos de encontro da cidade</p>
+            </div>
+            <div class="locais-grid">
+                <div class="local-card">
+                    <div class="local-badge shopping">Shopping</div>
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Shopping Manaíra</h3>
+                    <p>Maior shopping da cidade, com cinema IMAX, área de eventos, restaurantes e diversas lojas.</p>
+                </div>
+                <div class="local-card">
+                    <div class="local-badge shopping">Shopping</div>
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Shopping Tambiá</h3>
+                    <p>Shopping tradicional no centro da cidade, referência para os moradores locais.</p>
+                </div>
+                <div class="local-card">
+                    <div class="local-badge shopping">Shopping</div>
+                    <i class="fas fa-shopping-bag"></i>
+                    <h3>Mangabeira Shopping</h3>
+                    <p>Atende a região sul de João Pessoa com ampla oferta de serviços e lojas.</p>
+                </div>
+                <div class="local-card">
+                    <div class="local-badge mercado">Mercado</div>
+                    <i class="fas fa-store"></i>
+                    <h3>Mercado Central</h3>
+                    <p>Local de compras típicas, artesanato paraibano e souvenirs da Paraíba.</p>
+                </div>
+                <div class="local-card">
+                    <div class="local-badge praia">Orla</div>
+                    <i class="fas fa-umbrella-beach"></i>
+                    <h3>Orla de Tambaú</h3>
+                    <p>Calçadão à beira-mar com feiras, quiosques e vida noturna agitada.</p>
+                </div>
+                <div class="local-card">
+                    <div class="local-badge praia">Praia</div>
+                    <i class="fas fa-water"></i>
+                    <h3>Praia do Bessa</h3>
+                    <p>Área nobre com estrutura para famílias, esportes aquáticos e restaurantes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GALERIA -->
+    <section id="galeria">
+        <div class="container">
+            <div class="section-header light">
+                <h2>Galeria</h2>
+                <p>João Pessoa em imagens</p>
+            </div>
+            <div class="galeria-grid">
+                <div class="galeria-item g-tall">
+                    <img src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=600" alt="Praia de João Pessoa">
+                    <div class="galeria-caption">Praias Paradisíacas</div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1543168256-418811576931?w=600" alt="Pôr do sol">
+                    <div class="galeria-caption">Pôr do Sol</div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Centro histórico">
+                    <div class="galeria-caption">Centro Histórico</div>
+                </div>
+                <div class="galeria-item g-wide">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Orla">
+                    <div class="galeria-caption">Orla da Cidade</div>
+                </div>
+                <div class="galeria-item">
+                    <img src="https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600" alt="Arquitetura">
+                    <div class="galeria-caption">Arquitetura Colonial</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DICAS AO TURISTA -->
+    <section id="dicas">
+        <div class="container">
+            <div class="section-header">
+                <h2>Dicas ao Turista</h2>
+                <p>Informações práticas para aproveitar ao máximo sua visita</p>
+            </div>
+            <div class="dicas-grid">
+                <div class="dica-card">
+                    <div class="dica-icon"><i class="fas fa-cloud-sun"></i></div>
+                    <h3>Clima</h3>
+                    <ul>
+                        <li>Temperatura média: 26°C</li>
+                        <li>Chuvas de março a agosto</li>
+                        <li>Melhor época: set a fev</li>
+                        <li>Sempre leve protetor solar</li>
+                    </ul>
+                </div>
+                <div class="dica-card">
+                    <div class="dica-icon"><i class="fas fa-bus"></i></div>
+                    <h3>Transporte</h3>
+                    <ul>
+                        <li>Ônibus municipais disponíveis</li>
+                        <li>Aplicativos: Uber e 99</li>
+                        <li>Aeroporto Presidente Castro Pinto</li>
+                        <li>Táxis na orla e centro</li>
+                    </ul>
+                </div>
+                <div class="dica-card">
+                    <div class="dica-icon"><i class="fas fa-utensils"></i></div>
+                    <h3>Gastronomia</h3>
+                    <ul>
+                        <li>Frutos do mar frescos</li>
+                        <li>Tapioca artesanal</li>
+                        <li>Carne de sol com macaxeira</li>
+                        <li>Caldo de cana na orla</li>
+                    </ul>
+                </div>
+                <div class="dica-card">
+                    <div class="dica-icon"><i class="fas fa-info-circle"></i></div>
+                    <h3>Informações Gerais</h3>
+                    <ul>
+                        <li>Moeda: Real (BRL)</li>
+                        <li>Fuso: UTC-3</li>
+                        <li>DDI: +55 | DDD: 83</li>
+                        <li>Emergência: 190 / 192 / 193</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- RODAPÉ -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>🗺️ Guia Jampa</h3>
+                    <p>Uma plataforma turística desenvolvida com carinho para promover as belezas de João Pessoa — A Porta do Sol do Brasil.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#sobre">Sobre Jampa</a></li>
+                        <li><a href="#pontos">Pontos Turísticos</a></li>
+                        <li><a href="#locais">Locais Movimentados</a></li>
+                        <li><a href="#galeria">Galeria</a></li>
+                        <li><a href="#dicas">Dicas ao Turista</a></li>
+                    </ul>
+                </div>
+                <div class="footer-info">
+                    <h4>Projeto Acadêmico</h4>
+                    <p><i class="fas fa-university"></i> UniPê – João Pessoa, PB</p>
+                    <p><i class="fas fa-book"></i> Cadeira: Itinerário Informativo I</p>
+                    <p><i class="fas fa-chalkboard-teacher"></i> Prof. José Raul</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Guia Jampa · Desenvolvido com ❤️ em João Pessoa</p>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+
+    <!-- Scroll suave do navbar -->
+    <script>
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('scrolled', window.scrollY > 50);
+        });
+    </script>
 
 </body>
 </html>
