@@ -89,7 +89,7 @@
             <div class="pontos-grid">
                 <div class="ponto-card">
                     <div class="ponto-img">
-                       <img src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?w=600" alt="Farol do Cabo Branco">
+                       <img src="{% static 'pontos/farol-cabo-branco.jpg' %}" alt="Farol do Cabo Branco">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-landmark"></i></div>
@@ -99,7 +99,7 @@
                 </div>
                 <div class="ponto-card">
                     <div class="ponto-img">
-                        <img src="https://images.unsplash.com/photo-1590523741831-ab7e8b8f9c7f?w=600" alt="Praia de Tambaú">
+                        <img src="{% static 'pontos/praia-tambau.jpg' %}" alt="Praia de Tambaú">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-umbrella-beach"></i></div>
@@ -109,7 +109,7 @@
                 </div>
                 <div class="ponto-card">
                     <div class="ponto-img">
-                        <img src="https://images.unsplash.com/photo-1505118380757-91f5f5632de0?w=600" alt="Ponta do Seixas">
+                        <img src="{% static 'pontos/ponta-seixas.jpg' %}" alt="Ponta do Seixas">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-water"></i></div>
@@ -119,7 +119,7 @@
                 </div>
                 <div class="ponto-card">
                     <div class="ponto-img">
-                        <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600" alt="Parque Solon de Lucena">
+                        <img src="{% static 'pontos/parque-solon.jpg' %}" alt="Parque Solon de Lucena">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-tree"></i></div>
@@ -129,7 +129,7 @@
                 </div>
                 <div class="ponto-card">
                     <div class="ponto-img">
-                        <img src="https://images.unsplash.com/photo-1543832923-44667a44c804?w=600" alt="Centro Histórico">
+                        <img src="{% static 'pontos/centro-historico.jpg' %}" alt="Centro Histórico">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-church"></i></div>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="ponto-card">
                     <div class="ponto-img">
-                       <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600" alt="Jardim Botânico">
+                       <img src="{% static 'pontos/jardim-botanico.jpg' %}" alt="Jardim Botânico">
                     </div>
                     <div class="ponto-info">
                         <div class="ponto-icon"><i class="fas fa-seedling"></i></div>
@@ -166,21 +166,21 @@
                 <p>Shoppings, praças e pontos de encontro da cidade</p>
             </div>
             <div class="locais-grid">
-                <div class="local-card">
+                <div class="local-card local-card--img">
                     <div class="local-badge shopping">Shopping</div>
-                    <i class="fas fa-shopping-bag"></i>
+                    <div class="local-card-photo" style="background-image: url('{% static 'pontos/shopping-manaira.jpg' %}')"></div>
                     <h3>Shopping Manaíra</h3>
                     <p>Maior shopping da cidade, com cinema IMAX, área de eventos, restaurantes e diversas lojas.</p>
                 </div>
-                <div class="local-card">
+                <div class="local-card local-card--img">
                     <div class="local-badge shopping">Shopping</div>
-                    <i class="fas fa-shopping-bag"></i>
+                    <div class="local-card-photo" style="background-image: url('{% static 'pontos/shopping-tambia.jpg' %}')"></div>
                     <h3>Shopping Tambiá</h3>
                     <p>Shopping tradicional no centro da cidade, referência para os moradores locais.</p>
                 </div>
-                <div class="local-card">
+                <div class="local-card local-card--img">
                     <div class="local-badge shopping">Shopping</div>
-                    <i class="fas fa-shopping-bag"></i>
+                    <div class="local-card-photo" style="background-image: url('{% static 'pontos/shopping-mangabeira.jpg' %}')"></div>
                     <h3>Mangabeira Shopping</h3>
                     <p>Atende a região sul de João Pessoa com ampla oferta de serviços e lojas.</p>
                 </div>
@@ -215,24 +215,24 @@
             </div>
             <div class="galeria-grid">
                 <div class="galeria-item g-tall">
-                    <img src="https://images.unsplash.com/photo-1598439210625-5067c578f3f6?w=600" alt="Praia de João Pessoa">
+                    <img src="{% static 'pontos/praia-tambau.jpg' %}" alt="Praia de Tambaú">
                     <div class="galeria-caption">Praias Paradisíacas</div>
                 </div>
                 <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1543168256-418811576931?w=600" alt="Pôr do sol">
-                    <div class="galeria-caption">Pôr do Sol</div>
+                    <img src="{% static 'pontos/praia-jacare.jpg' %}" alt="Pôr do Sol no Jacaré">
+                    <div class="galeria-caption">Pôr do Sol no Jacaré</div>
                 </div>
                 <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Centro histórico">
+                    <img src="{% static 'pontos/centro-historico.jpg' %}" alt="Centro Histórico">
                     <div class="galeria-caption">Centro Histórico</div>
                 </div>
                 <div class="galeria-item g-wide">
-                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800" alt="Orla">
-                    <div class="galeria-caption">Orla da Cidade</div>
+                    <img src="{% static 'pontos/parque-solon.jpg' %}" alt="Parque Solon de Lucena">
+                    <div class="galeria-caption">Parque Solon de Lucena</div>
                 </div>
                 <div class="galeria-item">
-                    <img src="https://images.unsplash.com/photo-1466442929976-97f336a657be?w=600" alt="Arquitetura">
-                    <div class="galeria-caption">Arquitetura Colonial</div>
+                    <img src="{% static 'pontos/farol-cabo-branco.jpg' %}" alt="Farol do Cabo Branco">
+                    <div class="galeria-caption">Farol do Cabo Branco</div>
                 </div>
             </div>
         </div>
